@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Chart Dashboard</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <h2>Chart Controls</h2>
+        <div class="control-panel">
+          <label for="dataInput">Update Data:</label>
+          <input
+            type="text"
+            id="dataInput"
+            placeholder="Enter array e.g. [10, 20, 30, 40]"
+          />
+          <button data-action="updateData" id="updateDataButton">
+            Update Data
+          </button>
+        </div>
+        <div class="control-panel">
+          <label for="chartTypeSelect">Chart Type:</label>
+          <select id="chartTypeSelect">
+            <option value="bar">Bar</option>
+            <option value="line">Line</option>
+          </select>
+          <button data-action="updateChartType" id="updateChartTypeButton">
+            Update Chart Type
+          </button>
+        </div>
+        <div class="control-panel">
+          <label for="colorPicker">Change Color:</label>
+          <input type="color" id="colorPicker" />
+          <button data-action="changeColor" id="changeColorButton">
+            Change Color
+          </button>
+        </div>
+        <button data-action="resetChart" id="resetChartButton">
+          Reset Chart
+        </button>
+        <button id="toggleThemeButton">Toggle Dark Mode</button>
+        <button id="exportDataButton">Export Data</button>
+      </div>
+      <div class="main-content">
+        <canvas id="barChart" width="400" height="200"></canvas>
+        <table>
+          <thead>
+            <tr>
+              <th>Item 1</th>
+              <th>Item 2</th>
+              <th>Item 3</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Data 1</td>
+              <td>Data 2</td>
+              <td>Data 3</td>
+            </tr>
+            <tr>
+              <td>Data 4</td>
+              <td>Data 5</td>
+              <td>Data 6</td>
+            </tr>
+            <!-- Add more rows as needed -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/scripts.js"></script>
+  </body>
+</html>
